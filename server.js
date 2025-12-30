@@ -5,10 +5,11 @@ const response = require("./src/middlewares/response.middleware");
 const errorHandler = require("./src/middlewares/errorHandler.middleware");
 const notFound = require("./src/middlewares/notFound.middleware");
 const createRateLimiter = require("./src/middlewares/rateLimiter");
+require("dotenv").config();
 require("./src/config/database");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(json);
 app.use(response);
